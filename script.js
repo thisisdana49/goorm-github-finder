@@ -33,6 +33,10 @@ document.getElementById('searchUser').addEventListener('keyup', (event) => {
   }
 });
 
+document.querySelector('header').addEventListener('click', () => {
+  clearResults();
+});
+
 function displayProfile(profileData) {
   const profileSection = document.getElementById('profile');
   profileSection.style.display = 'inherit';
@@ -106,5 +110,9 @@ function displayRepositories(reposData) {
 
 
 function clearResults() {
-
+  document.getElementById('searchUser').value = '';
+  document.getElementById('profile').style.display = 'none';
+  document.getElementById('profile').innerHTML = '';
+  document.getElementById('repositories').style.display = 'none';
+  document.getElementById('repositories').innerHTML = '';
 }
