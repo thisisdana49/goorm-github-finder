@@ -4,7 +4,6 @@ function fetchGitHubProfile(username) {
     .then(response => response.json())
     .then(data => {
       displayProfile(data);
-      console.log(data)
     })
     .catch(error => console.error('Error:', error));
 }
@@ -15,6 +14,7 @@ function fetchGitHubRepositories(username) {
     .then(response => response.json())
     .then(data => {
       displayRepositories(data);
+      console.log(data)
     })
     .catch(error => console.error('Error:', error));
 }
@@ -70,7 +70,7 @@ function displayProfile(profileData) {
 
 function displayRepositories(reposData) {
   const reposSection = document.getElementById('repositories');
-  reposSection.style.display = 'inherit';
+  reposSection.style.display = 'flex';
 
   reposSection.innerHTML = '';
 
